@@ -176,6 +176,7 @@ header:after {
   position: sticky;
   top: 0;
   width: 100%;
+  height: 27px;
   z-index: 9999;
   justify-content: center;
   display:flex;
@@ -197,7 +198,6 @@ header:after {
 .topnav a:hover {
   background-color: #ddd;
   color: white;
-  font-weight: bold;
 }
 
 /* Add a color to the active/current link */
