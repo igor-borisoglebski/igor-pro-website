@@ -1,0 +1,530 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2.5rem;
+}
+
+body {
+    background-color: #f1f1f1;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: .02em;
+}
+
+/* Header */
+header {
+  align-items: center;
+  display: flex;
+  font-size: 28px;
+  height: 70vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  transform-style: preserve-3d;
+  perspective: 100px;
+}
+
+header:before {
+  animation: fade-slide-down 2s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),
+              url(../img/igor_bike-2560.jpg) no-repeat bottom;
+  background-size: cover;
+  content: "";
+  opacity: 0;
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  z-index: -1;
+}
+
+header:after {
+  animation: cubic-bezier(0, 0.5, 0, 1) forwards;
+  background: #F9FCFF;
+  content: "";
+  height: 55vh;
+  left: -5%;
+  transform-origin: 0 0;
+  z-index: 0;
+}
+
+.animate-pop-in {
+  animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.6) forwards;
+  opacity: 0;
+}
+
+.header-title {
+  position: absolute;
+  font-size: 6vmin;
+  letter-spacing: 0.03em;
+  animation-delay: 1s;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+  top: 10vh;
+  width: 100%;
+  left: 50%;
+  margin-left: -50%;
+}
+
+.header-subtitle {
+  animation-delay: 1.5s;
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  width: 100%;
+  left:50%;
+  margin-left: -50%;
+  top: 45vh;
+  font-family: monospace;
+}
+
+.input-cursor {
+  border-bottom: solid 3px rgba(0,255,0,.75);
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  animation: animated-cursor 900ms infinite;
+}
+
+/* Header Animations */
+
+@keyframes animated-cursor{
+  from{border-bottom-color: rgba(0,255,0,.75);}
+  to{border-bottom-color: transparent;}
+}
+
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px grey;
+  margin-bottom: 20px;
+  margin-left: 1%;
+  margin-right: 0.3%;
+}
+
+/* Sidenav column */
+.sidenav {
+  float: left;
+  width: 20%;
+  padding-right: 5px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 4px;
+  margin-top: 3px;
+}
+
+.sidenav p {
+  font-size: 14px;
+}
+
+.sidenav h1 {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.sidenav .card {
+  padding-top: 5px;
+}
+
+#name2 {
+  display: none;
+  font-weight: bold;
+}
+
+#personal-alt {
+  display: none;
+}
+
+/* Top Nav */
+.topnav {
+  background: rgb(101,111,114);
+  background: linear-gradient(180deg, rgba(101,111,114,1) 40%, rgba(64,77,78,1) 100%); 
+  overflow: hidden;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  justify-content: center;
+  display:flex;
+}
+
+.topnav a {
+  float: left;
+  color: #dadada;
+  text-align: center;
+  padding: 4px 16px;
+  text-decoration: none;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+  font-family: monospace;
+  font-size: 17px;
+  background: rgb(101,111,114);
+  background: linear-gradient(180deg, rgba(101,111,114,1) 40%, rgba(64,77,78,1) 100%); 
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: white;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  overflow: hidden;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px grey;
+  margin-bottom: 20px;
+  font-size: 12px;
+  z-index: 99;
+}
+
+#progresstop {
+  display: none;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #404d4e;
+  width: 0%;
+}
+
+/* Right column for main content*/
+.rightcolumn {   
+  padding-top: 3px;
+  width: 100%;
+  padding-left: 20%;
+}
+/*
+
+/* Main content sticky title bar */
+.stickytitle {
+  list-style-type: none;
+  float: left;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #404d4e; 
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 27px;
+  border-radius: 0px;
+  box-shadow: 2px 2px 5px grey;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #eee;
+  z-index: 99;
+  padding-left: 20px;
+  letter-spacing: 0.1em;
+}
+
+#intro {
+  margin-top: -20px; 
+  padding-bottom: 5px; 
+}
+
+/* Floating "Go to Contacts" Button */
+.contactbtnwrapper {
+	position:fixed;
+	width:100px;
+	height:30px;
+	bottom:30px;
+	right:11px;
+	background-color:#404d4e;
+	color:#FFF;
+	border-radius:50px;
+	box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
+  opacity: 55%;
+  display: none;
+  text-decoration: none;
+}
+
+.contactbtntxt {
+  position: absolute;
+  left: 14px;
+  top: -6px;
+  font-size: 13px;
+}
+
+/*JS support to hide/unhide eements*/
+.unhide {
+  display: unset;
+}
+
+.hide {
+  display: none;
+}
+
+/*Improve Responsiveness*/
+@media screen and (max-width: 1023px){
+
+  /*adjust header*/
+  header {
+    height: 50vh;
+  }
+
+  header:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),
+    url(../img/igor_bike-1200.jpg) no-repeat bottom;
+  }
+
+  .header-title {
+    top: 8vh;
+  }
+
+  .header-subtitle {
+    top: 30vh;
+    font-size: 24px;
+  }
+
+  /*adjust columns width to make it better suited for smaller screens and content to fit*/ 
+  .sidenav {
+    width: 40%;
+  }
+
+  .rightcolumn {
+    padding-left: 40%;
+  }
+
+  /*remove topnav*/
+  .topnav {
+    display: none;
+  }
+
+  #intro {
+    margin-top: inherit;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+  }
+
+  .stickytitle {
+    top: 0px;
+  }
+
+}
+
+@media screen and (max-width: 800px){
+  /*adjust header*/
+  header:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),
+    url(../img/igor_bike-992.jpg) no-repeat bottom;
+  }
+
+  header {
+    height: 40vh;
+  }
+
+  .header-subtitle {
+    top: 25vh;
+  }
+
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px){
+
+  /*adjust header*/
+  header:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),
+    url(../img/igor_bike-768.jpg) no-repeat bottom;
+  }
+
+  header {
+    height: 30vh;
+  }
+
+  .header-title {
+    top: 5vh;
+  }
+
+  .header-subtitle {
+    top: 19vh;
+    font-size: 18px;
+  }
+
+  /* convert sidenav and main content column to single column*/
+  .sidenav, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+      float: none;
+      position: relative;
+    }
+
+    /*switch progress bar from side to top*/
+    .progress-container {
+      margin-bottom: 0;
+      border-radius: 0;
+      height: 9px;
+    }
+
+    #name1 {
+      display: none;
+    }
+
+    #name2 {
+      display: unset;
+    }
+
+    #photo {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    /*switch progress bar from side to top*/
+    .progress-bar {
+      height: 9px;
+    }  
+    
+    #progressside {
+      display: none;
+    }
+
+    #progresstop {
+      display: unset;
+    }
+
+    .stickytitle {
+      top: 9px;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+  /*adjust header*/
+  header {
+    height: 23vh;
+  }
+
+  header:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),
+    url(../img/igor_bike-576.jpg) no-repeat bottom;
+  }
+
+  .header-title {
+    top: 4vh;
+  }
+
+  .header-subtitle {
+    top: 15vh;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 380px){
+  /*adjust header*/
+  header {
+    height: 18vh;
+  }
+
+  header:before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.6)),
+    url(../img/igor_bike-450.jpg) no-repeat bottom;
+  }
+
+  .header-title {
+    top: 4vh;
+  }
+
+  .header-subtitle {
+    top: 12vh;
+    font-size: 14px;
+  }
+}
+
+@media (max-height: 550px) {
+  /*switch personal and contact card to be fully visible in small height screens*/
+  .sidenav #contact {
+    display: none;
+  }
+
+  .contactbtnwrapper {
+    display: none;
+  }
+
+  .sidenav #personal {
+    display: none;
+  }
+
+  #personal-alt {
+    display: unset;
+  }
+
+  /*adjust header*/
+  header {
+    height: 50vh;
+  }
+
+  .header-title {
+    top: 8vh;
+  }
+
+  .header-subtitle {
+    top: 30vh;
+    font-size: 24px;
+  }
+
+  /*switch progress bar from side to top*/
+  .progress-container {
+    margin-bottom: 0;
+    border-radius: 0;
+    height: 9px;
+  }
+
+  .progress-bar {
+    height: 9px;
+  }  
+  
+  #progressside {
+    display: none;
+  }
+
+  #progresstop {
+    display: unset;
+  }
+
+  .stickytitle {
+    top: 9px;
+  }
+
+}

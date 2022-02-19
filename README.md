@@ -1,2 +1,2 @@
 # igor-pro-website
-Igor Borisoglebski's Professional Persona Website
+Igor's Professional Website
