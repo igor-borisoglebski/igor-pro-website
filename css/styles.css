@@ -413,6 +413,11 @@ header:after {
       padding-bottom: 10px;
     }
 
+    #photo2 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
     /*switch progress bar from side to top*/
     .progress-bar {
       height: 9px;
