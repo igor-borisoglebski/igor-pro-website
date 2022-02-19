@@ -17,7 +17,7 @@ function onScroll() {
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
   var clientWidth = document.documentElement.clientWidth;
-  if (clientWidth <= 600) {
+  if (clientWidth <= buttonWidthTrigger) {
     document.getElementById("myBar2").style.width = scrolled + "%";
   }
   else {
@@ -38,6 +38,29 @@ function onScroll() {
   else {
     contactButton.className = "hide";
   }
+
+  //topnavbar section
+  topnavbarsections = document.getElementsByClassName("topnavidx");
+  if (scrolled > 85){
+    current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active ", "");
+    topnavbarsections[3].className = "active topnavidx";
+  } 
+  else if (scrolled > 66){
+    current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active ", "");
+    topnavbarsections[2].className = "active topnavidx";
+  } 
+  else if (scrolled > 23){
+    current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active ", "");
+    topnavbarsections[1].className = "active topnavidx";
+  }
+  else {
+    current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active ", "");
+    topnavbarsections[0].className = "active topnavidx";
+  }
 }
 
 // Remove hash and whatever comes after from the url
@@ -45,3 +68,4 @@ function removeHash() {
   history.pushState(null, null, window.location.href.split("#")[0]);
 }
 
+console.log("Well, you seem to be very curious. So, you'll also get to know some of my personal interests and favorite activities: Fixing things, technology, motorcycle off-road riding, golf, reading, music and travelling.");

@@ -200,6 +200,12 @@ header:after {
   color: white;
 }
 
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
 /* The progress container (grey background) */
 .progress-container {
   width: 100%;
