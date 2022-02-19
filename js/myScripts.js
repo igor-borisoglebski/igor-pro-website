@@ -9,6 +9,9 @@ window.onscroll = function() {onScroll()};
 let heightSwitch = 550;
 let buttonOffset = 15;
 let buttonWidthTrigger = 600;
+let workXpIndex = 23;
+let patentsIndex = 66;
+let educationIndex = 84;
 
 // Progress bar and contact button hide/unhide
 function onScroll() {
@@ -29,17 +32,17 @@ function onScroll() {
 
       //topnavbar section
       topnavbarsections = document.getElementsByClassName("topnavidx");
-      if (scrolled > 85){
+      if (scrolled > educationIndex){
         current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace("active ", "");
         topnavbarsections[3].className = "active topnavidx";
       } 
-      else if (scrolled > 66){
+      else if (scrolled > patentsIndex){
         current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace("active ", "");
         topnavbarsections[2].className = "active topnavidx";
       } 
-      else if (scrolled > 23){
+      else if (scrolled > workXpIndex){
         current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace("active ", "");
         topnavbarsections[1].className = "active topnavidx";
