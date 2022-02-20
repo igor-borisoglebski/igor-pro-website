@@ -255,7 +255,7 @@ header:after {
   background-color: #404d4e; 
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 27px;
+  top: 26px;
   border-radius: 0px;
   box-shadow: 2px 2px 5px grey;
   margin-bottom: 20px;
